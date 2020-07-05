@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>loan Calculator</title>
+   <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <!--font awesome-->
+    <link rel="stylesheet" href="./CSS/all.min.css">
+      <!--  beguettebox css file  -->
+    <link rel="stylesheet" type="text/css" href="./CSS/baguetteBox.min">
+       <!--  Responsive css file  -->
+    <link rel="stylesheet" href="./CSS/responsive.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id ="container"><!--- begin of container div -->
+    <h1>Loan Calculator</h1>
+     <hr>
+     <div><!--- Begin Principal Amount -->
+       <label>Principal Amount:</label>
+       <input type="text" id="PrincipalAmount" placeholder="Enter your Principal">
+     </div><!--- End Principal Amount -->
+
+     <div><!--- Begin Rate -->
+       <label>Rate</label>
+       <input type="range" value="0" id="rate">
+       <span id="rateOutput"></span>
+     </div><!--- End Rate -->
+
+    <div><!--- Begin duration -->
+       <label>Duration</label>
+       <input type="range" value="1" min="1" max="12" id="duration">
+       <span id="rangeOutput"></span>
+     </div><!--- End duration -->
+     <hr>
+
+     <div><!--- begin interest -->
+       <label>Interest (On Loan):</label> <span id="InterestOuput"></span>
+     </div><!--- End interest -->
+
+     <div><!--- begin amount -->
+       <label>Amount to pay (For Loan):</label> <span id="AmountOutput"></span>
+     </div><!--- End amount -->
+
+   </div><!--- end of container div -->
+
+   <script type="text/javascript">
+     
+     document.getElementById('container').onchange = function(){
+      var Principal = Number(document.getElementById('PrincipalAmount').value);
+
+      var rate = document.getElementById('rate').value;
+
+      var duration = document.getElementById('duration').value;
+
+      var interest = (Principal*rate*duration)/100;
+
+      var amount = Principal + interest;
+
+
+      document.getElementById('rateOutput').innerHTML = rate + "%";
+
+      document.getElementById('rangeOutput').innerHTML = duration + " Months";
+
+      document.getElementById('InterestOuput').innerHTML="₦ "+ interest;
+      document.getElementById('AmountOutput').innerHTML= "₦ " + amount;
+
+      
+     
+
+     }
+   </script>
+  <!--  Jquery js file  -->
+    <script src="./js/jquery.3.4.1.js"></script>
+    <!--boostrap jsfile-->
+    <script src="./js/bootstrap.min.js"></script>
+      <!--baguetteBox jsfile-->
+    <script type="./js/baguetteBox.min.js"></script>
+</body>
+</html>

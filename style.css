@@ -1,0 +1,54 @@
+body{
+	width:100%;
+	font-size:1.2em;
+	margin: 0 auto;
+	letter-spacing:0.5px;
+}
+
+h1{
+	text-align:center;
+}
+
+#container{
+	padding:1.5em;
+	border-radius:10px;
+	background:linear-gradient(-45deg,rgb(245, 156, 127), rgb(241,89,38));
+
+}
+
+label,input{
+	width:100%;
+}
+
+div{
+	line-height:2.5em;
+}
+
+input[type="text"]{
+	text-align:center;
+	font-size:1.1em;
+}
+
+@media(min-width:700px){
+	body{
+		width:60%;
+		background:url(loan.jpg) no-repeat center center fixed;
+		background-size:cover;
+		
+	}
+
+	#container{
+		margin-top:20px;
+		opacity:0.9;
+	}
+
+	label,input{
+      width: 40%;
+      display:inline-block;
+	}
+
+	div{
+		line-height:4em;
+	}
+}
+
